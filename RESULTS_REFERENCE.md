@@ -3,7 +3,7 @@
 **Main goal:** Measure SDXL image-generation performance  
 **Tools:** Run scripts/infer_sdxl.py --backend sdxl with real SDXL in every profile; smoke uses reduced resolution and steps
 
-Reference results measured by the maintainer on the system shown in each section (generator TEMPLATE_00_145 · recorded 2026-11-17). Your own runs write `results/RESULTS_ACTUAL.md` in the same format.
+Reference results measured by the maintainer on the system shown in each section (generator TEMPLATE_00_146 · recorded 2026-11-18). Your own runs write `results/RESULTS_ACTUAL.md` in the same format.
 
 > Smoke runs use deliberately small sizes. They check that the workload installs and runs end to end; their numbers are not performance results. Baseline and extended are.
 
@@ -11,16 +11,16 @@ Reference results measured by the maintainer on the system shown in each section
 ## smoke
 
 - **System:** 1× AMD Instinct MI300X VF (196288 MB) · INTEL(R) XEON(R) PLATINUM 8568Y+ · Ubuntu 24.04.5 LTS · kernel 6.8.0-147-generic · driver 7.1.9.31600000
-- **Run:** 2026-11-17T11:36:22Z · status **PASS** (exit 0)
-- **Time (mm:ss):** setup 01:45 · benchmark 00:02 · whole run 02:02
-- **Source:** run 124_20261117_113622
+- **Run:** 2026-11-18T11:24:15Z · status **PASS** (exit 0)
+- **Time (mm:ss):** setup 01:51 · benchmark 00:02 · whole run 02:08
+- **Source:** run 124_20261118_112415
 - **Command:** `bash run_benchmark.sh --smoke --model-name sdxl-base-1.0 --precision fp16 --scheduler euler --prompt-source synthetic --image-resolution 64 --num-images 1 --num-inference-steps 2 --guidance-scale 0 --seed 42 --prompt-len 32 --batch-size 1`
 
 | # | Metric | Result |
 |---|---|---|
-| 1 | Per-image latency (per_image_latency_sec) | 0.13243738400024085 |
-| 2 | Aggregate throughput (images_per_sec) | 7.550738090675224 |
+| 1 | Per-image latency (per_image_latency_sec) | 0.14291283900001872 |
+| 2 | Aggregate throughput (images_per_sec) | 6.9972719525911105 |
 | 3 | Peak GPU memory, GB (peak_gpu_memory_gb) | 8.038383616 |
-| 4 | Denoising step time per batch, ms (step_time_ms) | 47.00248949984598 |
-| 5 | First-image latency, cold, ms (first_image_latency_ms) | 16873.70369099972 |
+| 4 | Denoising step time per batch, ms (step_time_ms) | 49.78879500004041 |
+| 5 | First-image latency, cold, ms (first_image_latency_ms) | 16896.728353999606 |
 <!-- /profile:smoke -->
